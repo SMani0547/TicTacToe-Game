@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!-- Declaration of the HTML document type -->
+<html lang="en">
+<!-- Start of the HTML document with the language set to English -->
+    <head>
+         <!-- Start of the head section containing metadata and links to external resources -->
+        <meta charset="UTF-8">
+         <!-- Declaring the character encoding for the document -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <!-- Meta tag for responsive viewport settings -->
+
+        <!-- Meta tag for setting the rendering engine for Internet Explorer -->
+        meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Creation for Registration Form -->
+        <title>Registration Form</title>
+        <!-- Title of the HTML document -->
+        <link rel="stylesheet" href="style1.css">
+        <!-- Linking an external CSS stylesheet -->
+    </head>
+
+    <body>
+    <!-- Start of the body section -->
+        <section>
+            <!-- Start of a section within the body -->
+            <div class="login-box">
+                <!-- Container for the registration form with the class "login-box" -->
+                <form id="registrationForm" onsubmit="event.preventDefault(); registerUser();">
+ <!-- Form element with an ID and event handler for form submission -->
+                    <h2>Request Access</h2>
+                    <!-- Heading for the registration form -->
+                    <div class="input-box">
+                        <!-- Container for an input field with the class "input-box" -->
+                        <span class="icon">
+                            <!-- Container for an icon within the input box -->
+                            <!-- Icon for the person/user -->
+                            <ion-icon name="person"></ion-icon>
+                        </span>
+                        <!-- input for username -->
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Name</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="mail"></ion-icon>
+                          <!-- End of the icon container -->
+                        </span>
+                        <!-- input for password -->
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email</label>
+                    </div>
+
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="chatbox-ellipses"></ion-icon>
+                        </span>
+                        <!-- input for request -->
+                        <input type="text" id="message" name="message" required>
+                        <label for="message">Reason For Request</label>
+                    </div>
+                     <!-- Button to submit the form -->
+                    <button type="submit">Request Access</button>
+                    <!-- Container for the register link -->
+                    <div class="register-link">
+                        <p>Already have access? <a href="login1.html">Login Here</a></p>
+                    <!-- Text with a link to the login page -->
+                    </div>
+                </form>
+            </div>
+        </section>
+        <!-- email configuration -->
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script>
+            <!-- function for using the detail and sending request to admins email for access -->
+            function registerUser() {
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                var message = document.getElementById('message').value;
+
+                // Initialize EmailJS with your public key
+                emailjs.init("Enter Your EmailJS with your public key here");
+
+                // Example using EmailJS to send email
+                emailjs.send("Enter you service id here", "enter your template it here", { name: name, email: email, message: message })
+                    .then(function(response) {
+                        console.log("Email sent:", response);
+                        alert('Registration successful! An email has been sent for approval.');
+                        document.getElementById('registrationForm').reset();
+                        // Reset the form after successful registration
+                        window.location.href = 'login1.html'; // Redirect to homepage if login successful
+
+                    }, function(error) {
+                        console.error("Email error:", error);
+                        alert('Oops! Enter Your EmailJS with your public key ....please look at register.html code');
+                    });
+            }
+        </script>
+    </body>
+</html>

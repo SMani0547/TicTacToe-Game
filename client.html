@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style2.css">
+        <title>Tic-Tac-Toe</title>
+    </head>
+
+
+    <body>
+    <!-- Animated geometric shapes -->
+        <div class="backwrap gradient">
+            <div class="back-shapes">
+
+                <span class="floating circle" style="top:66.59856996935649%;left:13.020833333333334%;animation-delay:-0.9s;"></span>
+                <span class="floating triangle" style="top:31.46067415730337%;left:33.59375%;animation-delay:-4.8s;"></span>
+                <span class="floating cross" style="top:76.50663942798774%;left:38.020833333333336%;animation-delay:-4s;"></span>
+                <span class="floating square" style="top:21.450459652706844%;left:14.0625%;animation-delay:-2.8s;"></span>
+                <span class="floating square" style="top:58.12053115423902%;left:56.770833333333336%;animation-delay:-2.15s;"></span>
+                <span class="floating square" style="top:8.682328907048008%;left:72.70833333333333%;animation-delay:-1.9s;"></span>
+                <span class="floating cross" style="top:31.3585291113381%;left:58.541666666666664%;animation-delay:-0.65s;"></span>
+                <span class="floating cross" style="top:69.96935648621042%;left:81.45833333333333%;animation-delay:-0.4s;"></span>
+                <span class="floating circle" style="top:15.117466802860061%;left:32.34375%;animation-delay:-4.1s;"></span>
+                <span class="floating circle" style="top:13.074565883554648%;left:45.989583333333336%;animation-delay:-3.65s;"></span>
+                <span class="floating cross" style="top:55.87334014300306%;left:27.135416666666668%;animation-delay:-2.25s;"></span>
+                <span class="floating cross" style="top:49.54034729315628%;left:53.75%;animation-delay:-2s;"></span>
+                <span class="floating cross" style="top:34.62717058222676%;left:49.635416666666664%;animation-delay:-1.55s;"></span>
+                <span class="floating cross" style="top:33.19713993871297%;left:86.14583333333333%;animation-delay:-0.95s;"></span>
+                <span class="floating square" style="top:28.19203268641471%;left:25.208333333333332%;animation-delay:-4.45s;"></span>
+                <span class="floating circle" style="top:39.7344228804903%;left:10.833333333333334%;animation-delay:-3.35s;"></span>
+                <span class="floating triangle" style="top:77.83452502553627%;left:24.427083333333332%;animation-delay:-2.3s;"></span>
+                <span class="floating triangle" style="top:2.860061287027579%;left:47.864583333333336%;animation-delay:-1.75s;"></span>
+                <span class="floating triangle" style="top:71.3993871297242%;left:66.45833333333333%;animation-delay:-1.25s;"></span>
+                <span class="floating triangle" style="top:31.256384065372828%;left:76.92708333333333%;animation-delay:-0.65s;"></span>
+                <span class="floating triangle" style="top:46.47599591419816%;left:38.90625%;animation-delay:-0.35s;"></span>
+                <span class="floating cross" style="top:3.4729315628192032%;left:19.635416666666668%;animation-delay:-4.3s;"></span>
+                <span class="floating cross" style="top:3.575076608784474%;left:6.25%;animation-delay:-4.05s;"></span>
+                <span class="floating cross" style="top:77.3237997957099%;left:4.583333333333333%;animation-delay:-3.75s;"></span>
+                <span class="floating cross" style="top:0.9193054136874361%;left:71.14583333333333%;animation-delay:-3.3s;"></span>
+                <span class="floating square" style="top:23.6976506639428%;left:63.28125%;animation-delay:-2.1s;"></span>
+                <span class="floating square" style="top:81.30745658835546%;left:45.15625%;animation-delay:-1.75s;"></span>
+                <span class="floating square" style="top:60.9805924412666%;left:42.239583333333336%;animation-delay:-1.45s;"></span>
+                <span class="floating square" style="top:29.009193054136876%;left:93.90625%;animation-delay:-1.05s;"></span>
+                <span class="floating square" style="top:52.093973442288046%;left:68.90625%;animation-delay:-0.7s;"></span>
+                <span class="floating square" style="top:81.51174668028601%;left:83.59375%;animation-delay:-0.35s;"></span>
+                <span class="floating square" style="top:11.542390194075587%;left:91.51041666666667%;animation-delay:-0.1s;"></span>
+                <!-- Button to navigate back to the home page -->
+                <button class="cybr-btn" id="backToHomeBtn">
+                    Back<span aria-hidden>_</span>
+                    <span aria-hidden class="cybr-btn__glitch">Back_</span>
+                    <span aria-hidden class="cybr-btn__tag">BACK</span>
+                </button>
+                 <!-- Player information for Player 1 -->
+                <div class="player-info left">Player 1: You(X)</div>
+                <!-- Player information for Player 2 -->
+                <div class="player-info right">Player 2: Computer(O)</div>
+
+                <div class="ntb">
+                     <!-- Button to reset the game and play again -->
+                    <button class="cybr-btn" id="reset-btn">
+                        Play Again<span aria-hidden>_</span>
+                        <span aria-hidden class="cybr-btn__glitch">Play Again_</span>
+                        <span aria-hidden class="cybr-btn__tag">RESET</span>
+                    </button>
+                </div>
+                <!-- Main game box container -->
+                <div class="game-box">
+                    <!-- Container for popups -->
+                    <div class="container">
+                        <!-- Popup displayed when a player wins -->
+                        <div class="win-popup" id="winPopup">
+                            <p id="winMessage"></p>
+                        </div>
+                        <!-- Popup displayed when the game ends in a draw -->
+                        <div class="draw-popup" id="drawPopup" style="display: none;">
+                            <p>It's a Draw!</p>
+                        </div>
+
+                          <!-- Game board container -->
+                        <div class="board">
+                            <!-- Individual cells on the game board -->
+                            <div class="cell" id="cell-0"></div>
+                            <div class="cell" id="cell-1"></div>
+                            <div class="cell" id="cell-2"></div>
+                            <div class="cell" id="cell-3"></div>
+                            <div class="cell" id="cell-4"></div>
+                            <div class="cell" id="cell-5"></div>
+                            <div class="cell" id="cell-6"></div>
+                            <div class="cell" id="cell-7"></div>
+                            <div class="cell" id="cell-8"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+  <script>
+      // Wait for the DOM content to be fully loaded
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Selecting DOM elements
+        const cells = document.querySelectorAll('.cell');
+      const resetBtn = document.getElementById('reset-btn');
+      const gameMessage = document.getElementById('gameMessage');
+      const messageInput = document.getElementById('messageInput');
+      const sendMessageBtn = document.getElementById('sendMessageBtn');
+       const winPopup = document.getElementById('winPopup');
+       const drawPopup = document.getElementById('drawPopup');
+
+       // Initialize game variables
+      let currentPlayer = 'X';
+      let gameOver = false;
+
+      // Add click event listener to each cell
+      cells.forEach(cell => {
+        cell.addEventListener('click', () => {
+            // Check if the game is not over and the cell is empty
+          if (!gameOver && cell.textContent === '') {
+            cell.textContent = currentPlayer;
+            makeMove(parseInt(cell.id.split('-')[1]), currentPlayer);
+            currentPlayer = currentPlayer === 'X' ? 'O' : 'X'; // Switch player after each move
+            if (currentPlayer === 'O') {
+              makeComputerMove();// Function to make computer move (assuming it's defined elsewhere)
+            }
+            checkWinner(); // Check for winner after each move
+          }
+        });
+      });
+
+      resetBtn.addEventListener('click', () => {
+                    cells.forEach(cell => {
+                        cell.textContent = '';
+                        cell.classList.remove('highlight'); // Remove highlight class
+                    });
+                    gameOver = false;
+                    currentPlayer = 'X';
+                    winPopup.style.top = '-100px'; // Hide win pop-up
+                    drawPopup.style.display = 'none'; // Hide draw pop-up
+                });
+
+
+      sendMessageBtn.addEventListener('click', () => {
+        const message = messageInput.value.trim();
+        if (message !== '') {
+          sendMessage(message);
+        }
+      });
+      // function for player making move
+      async function makeMove(index, player) {
+        const response = await fetch('http://localhost:10048', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'text/plain'
+          },
+          body: `move:${index},${player}`
+        });
+        const data = await response.text();
+        console.log(data);
+      }
+      // function for computer making move
+      async function makeComputerMove() {
+        const emptyCells = Array.from(cells).filter(cell => cell.textContent === '');
+        const randomIndex = Math.floor(Math.random() * emptyCells.length);
+        const cellId = emptyCells[randomIndex].id;
+        const index = parseInt(cellId.split('-')[1]);
+        cells[index].textContent = currentPlayer;
+        makeMove(index, currentPlayer);
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X'; // Switch player after the computer's move
+      }
+      // function for checking the winner, loser,and draw  situation
+      function checkWinner() {
+                    const buttons = Array.from(cells).map(cell => cell.textContent);
+                    const winningPositions = [
+                        [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+                        [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+                        [0, 4, 8], [2, 4, 6] // Diagonals
+                    ];
+                    let draw = true; // Assume it's a draw initially
+                    for (const pos of winningPositions) {
+                        if (
+                        buttons[pos[0]] !== '' &&
+                        buttons[pos[0]] === buttons[pos[1]] &&
+                        buttons[pos[1]] === buttons[pos[2]]
+                        ) {
+                            gameOver = true;
+                            if (buttons[pos[0]] === 'X') {
+                                winMessage.innerText = "X Wins!";
+                            } else {
+                                winMessage.innerText = "O Wins!";
+                            }
+                            winPopup.style.top = '50%'; // Show win pop-up
+                            cells[pos[0]].classList.add('highlight'); // Highlight winning cells
+                            cells[pos[1]].classList.add('highlight');
+                            cells[pos[2]].classList.add('highlight');
+                            return;
+                        }
+                        if (buttons[pos[0]] === '' || buttons[pos[1]] === '' || buttons[pos[2]] === '') {
+                            draw = false; // If any cell in a winning position is empty, it's not a draw yet
+                        }
+                    }
+                    if (draw) {
+                        gameOver = true;
+                        drawPopup.style.display = 'block'; // Show draw pop-up
+                    }
+                }
+
+      async function sendMessage(message) {
+        const response = await fetch('http://localhost:10048', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'text/plain'
+          },
+          body: `message:${message}`
+        });
+        const data = await response.text();
+        console.log(data);
+      }
+    });
+      // after login send s to laoding page and then directs to homepage
+      document.addEventListener('DOMContentLoaded', () => {
+                const backToHomeBtn = document.getElementById('backToHomeBtn');
+
+                backToHomeBtn.addEventListener('click', () => {
+                    window.location.href = 'loading_screen_return.html';
+                });
+            });
+  </script>
+</body>
+</html>

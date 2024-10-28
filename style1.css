@@ -1,0 +1,149 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	width: 100%;
+	background: url('https://i.pinimg.com/originals/fd/6d/20/fd6d209bcf1ac96d046d9af9a405a24e.png') no-repeat;
+	background-size: cover;
+	background-position: center;
+	animation: animateBg 2s linear infinite;
+}
+
+@keyframes animateBg {
+	100%{
+		filter: hue-rotate(360deg);
+	}
+}
+
+.login-box {
+	position: relative;
+	width: 450px;
+	height: 500px;
+	border: 1px solid rgba(255, 255, 255, .4);
+	background: transparent;
+	border-radius: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(35px);
+}
+
+h2 {
+	font-size: 40px;
+	color: white;
+	text-align: center;
+}
+
+.input-box{
+	position: relative;
+	width: 400px;
+	margin: 40px 0;
+	border-bottom: 2px solid white;
+	}
+
+	.input-box label {
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	transform: translateY(-50%);
+	font-size: 20px;
+	color: white;
+	pointer-events: none;
+	transition: .6s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+	top: -7px;
+}
+
+.input-box input {
+	width: 100%;
+	height: 50px;
+	background: transparent;
+	border: none;
+	outline: none;
+	font-size: 20px;
+	color: white;
+	padding: 0 20px 0 4px;
+}
+
+.input-box .icon {
+	position: absolute;
+	right: 8px;
+	font-size: 25px;
+	color: white;
+	line-height: 60px;
+}
+
+.remember-forget{
+	margin: -20px 0 15px;
+	font-size: 16px;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+}
+
+.remember-forget label input {
+	margin-right: 7px;
+}
+
+.remember-forget a {
+	color: white;
+	text-decoration: none;
+}
+
+.remember-forget a:hover {
+	color: white;
+	text-decoration: underline;
+}
+
+button {
+	width: 100%;
+	height: 45px;
+	background: white;
+	border: none;
+	outline: none;
+	border-radius: 40px;
+	cursor: pointer;
+	font-size: 20px;
+	color: black;
+	font-weight: 600;
+}
+
+.register-link {
+	font-size: 17px;
+	color: lightgray;
+	text-align: center;
+	margin: 25px 0 10px;
+
+}
+
+.register-link  a {
+	color: white;
+	text-decoration: none;
+	font-weight: 100px;
+
+}
+
+.register-link  a:hover {
+	text-decoration: underline;
+}
+
+@media (max-width:500px) {
+	.login-box {
+		width: 100%;
+		height: 100vh;
+		border: none;
+	}
+	.input-box {
+		width: 350px;
+	}
+}

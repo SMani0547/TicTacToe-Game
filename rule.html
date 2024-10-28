@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!-- Declaration of the HTML document type -->
+<html lang="en">
+<!-- Start of the HTML document with the language set to English -->
+    <head>
+        <!-- Start of the head section containing metadata and links to external resources -->
+        <meta charset="UTF-8">
+        <!-- Declaring the character encoding for the document -->
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Meta tag for setting the rendering engine for Internet Explorer -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rules</title>
+        <!-- Title of the HTML document -->
+        <link rel="stylesheet" href="style6.css">
+       <!-- Linking an external CSS stylesheet -->
+    </head>
+
+    <body>
+    <!-- Start of the body section -->
+        <div class="frame">
+            <!-- Container for the frame with the class "frame" -->
+            <!-- Button for going back with an onclick event -->
+            <button class="custom-btn btn-16" onclick="back()">Back</button>
+            <center><img style="align-items: center" width="400" lenght src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShmrkW9LoRFW2NKnFIHTEJROnte5JIAWITMA&s"></img></center>
+           <!-- Centered image with a specified width and source URL -->
+        </div>
+    <!-- End of the frame container -->
+
+        <!-- rules for the game -->
+        <div id="content">
+            <!-- Container for the content with the ID "content" -->
+            <h1 style="padding-left:25px;">Rules</h1>
+            <!-- Heading for the rules section -->
+            <p>Rules may be updated due time if needed.</p>
+            <!-- Paragraph about possible updates to the rules -->
+            <p>If you do not comply or follow these rules there will be a punishment depending on the severity of the rulebreak.</p>
+             <!-- Paragraph about consequences for not following the rules -->
+            <br />
+            <!-- Line break for spacing -->
+            <p style="font-size:18px;"><strong>General Rules:</strong></p>
+            <!-- Paragraph with strong emphasis for general rules heading -->
+            <ul style="list-style-type:circle">
+                <!-- Unordered list with circular bullets -->
+
+                <!-- List items for general rules -->
+                <li>Do not disrespect/harass/troll/be racist/etc.</li>
+                <li>Do not hack/exploit/cheat/cause crashes.</li>
+                <li>Do not chat spam.</li>
+                <li>Do not e<!-- Unordered list with circular bullets -->
+
+                <!-- List items for general rules -->vade or avoid punishment (disconnecting in an admin situation can lead to a permanent ban).</li>
+            </ul>
+
+            <br />
+            <!-- Line break for spacing -->
+            <p style="font-size:18px;"><strong>Rules To Play This Game:</strong></p>
+           <!-- Paragraph with strong emphasis for game rules heading -->
+            <ul style="list-style-type:circle">
+                <!-- Unordered list with circular bullets -->
+
+                <!-- List items for game rules -->
+                <li>The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.</li>
+                <li>When all 9 squares are full, the game is over.</li>
+                <li>If no player has 3 marks in a row, the game ends in a tie.</li>
+                <li>
+                    <!-- Nested list for game modes -->
+                <p style="font-size:15px;"><strong>Player VS Computer</strong></p>
+                 <!-- Paragraph with strong emphasis for player vs computer heading -->
+                    <ul style="list-style-type:circle">
+                    <li>You are Player 1(X)</li>
+                    <li>Computer is Player 2(O)</li>
+                </ul>
+                </li>
+                <li>
+                    <!-- Another nested list for player vs player mode -->
+                <p style="font-size:15px;"><strong>Player VS Player</strong></p>
+                <ul style="list-style-type:circle">
+                    <!-- Nested unordered list with circular bullets -->
+
+                        <!-- List items for player vs player mode -->
+                    <li>Whoever Connects first is player 1 & the other one will be player 2</li>
+                    <li>Player 1 is X</li>
+                    <li>Player 2 is O</li>
+                    <li>Built in chat system, you can use this chat system to chat with the other player</li>
+                </ul>
+                </li>
+            </ul>
+        </div>
+        <script>
+             // JavaScript function for going back
+            function back() {
+                // Redirect to the game.html page for playing against the computer
+                window.location.href = 'loading_screen_return.html';
+            }
+        </script>
+    </body>
+</html>
